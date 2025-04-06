@@ -120,20 +120,11 @@
         margin: 0 auto;
       }
 
-      .nav-bar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: #FFED81;
-        z-index: 1000;
-        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-      }
-
-      .experience-box {
+      .art-box {
         background-color: #FEBACB;
         width: 300px;
-        height: 120px;
-        border-radius: 30px;
+        height: 300px;
+        border-radius: 360px;
         padding: 1em;
         font-family: "Kite One", sans-serif;
         font-size: 1.5em;
@@ -143,44 +134,49 @@
         position: relative;
 
         display: flex;
-        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
       }
-
-      .experience-box.blue-version {
-        background-color: #B6E3FF;
-        /* blue */
+      
+      .art-box::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        transition: background-color 0.3s ease;
+        border-radius: 360px;
+        z-index: 1;
       }
-
-      .experience-box:hover {
-        height: auto;
-        width: 400px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      
+      .art-box:hover::after {
+        background-color: rgba(0, 0, 0, 0.5);
       }
-
-      .experience-summary {
+      
+      .art-summary {
+        position: relative;
+        z-index: 2;
         text-align: center;
-      }
-
-      .experience-details {
+        color: #FE97AC;
         opacity: 0;
-        max-height: 0;
-        transition: all 0.4s ease;
-        font-size: 0.7em;
-        margin-top: 1em;
+        transition: opacity 0.3s ease;
       }
-
-      .experience-box:hover .experience-details {
+      
+      .art-box:hover .art-summary {
         opacity: 1;
-        max-height: 1000px;
       }
 
-      .experience-details ul {
-        padding-left: 1.2em;
-        list-style-type: disc;
-        margin: 0;
+      .nav-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #FFED81;
+        z-index: 1000;
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
       }
-
 
       .nav-bar ul {
         list-style-type: none;
@@ -193,12 +189,6 @@
 
       .nav-bar li {
         float: left;
-      }
-
-      .experience-details li {
-        margin-bottom: 0.5em;
-        font-size: 1em;
-        line-height: 1.4;
       }
 
       .nav-bar li a {
@@ -216,7 +206,7 @@
         border-bottom: 4px solid #00A0EC;
       }
 
-      .nav-bar li a[href="#experience"] {
+      .nav-bar li a[href="#artwork"] {
         color: #9747FF;
         border-bottom: 4px solid #A020F0;
       }
@@ -230,118 +220,105 @@
         <ul>
           <li><a href="https://soifa.github.io/myPortfolio-background/">Background</a></li>
           <li><a href="https://soifa.github.io/myPortfolio-interest/">Interest</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="https://soifa.github.io/myPortfolio-art-work/">Artwork</a></li>
+          <li><a href="https://soifa.github.io/myPortfolio-experience/">Experience</a></li>
+          <li><a href="#artwork">Artwork</a></li>
         </ul>
       </div>
-
-      <!-- Experience Title -->
-      <div class="section-title">
-        <div class="intro">
-          <h1>
-            <span>E</span><span>x</span><span>p</span><span>e</span><span>r</span><span>i</span><span>e</span><span>n</span><span>c</span><span>e</span>
-          </h1>
-        </div>
-      </div>
-
-      <!-- Accounting -->
-      <div class="container">
-        <div class="experience-box">
-          <div class="experience-summary">
-            <p>Accounting<br>Bookkeeper</p>
-          </div>
-          <div class="experience-details">
-            <p><b>Benson Lam CPA · Sep 2021 ~ Dec 2021</b></p>
-            <ul>
-              <li>Maintained and processed invoices, deposits, and money logs.</li>
-              <li>Tracked expenses and income for business while organizing and maintaining bank statements for checking accounts.</li>
-              <li>Reconciled and corrected issues with financial records.</li>
-              <li>Answer client phone calls and assist walk-in clients.</li>
-              <li>Identified accounting errors when cross-referencing documents and database information.</li>
-              <li>Reported financial data and updated financial records in ledgers and journals.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Sun Life UX Jam -->
-        <div class="experience-box">
-          <div class="experience-summary">
-            <p>Sun Life UX<br>Design Jam</p>
-          </div>
-          <div class="experience-details">
-            <p><b>Sun Life · Oct 2024</b></p>
-            <ul>
-              <li>Collaborate with professional UX Designer in teams</li>
-              <li>Building a mature design with brainstorming, wireframe, user flow, prototype and display presentation within the limited time.</li>
-              <li>Presenting to Sunlife employees to market our design.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Rogers UX Jam -->
-        <div class="experience-box">
-          <div class="experience-summary">
-            <p>Rogers UX<br>Design Jam</p>
-          </div>
-          <div class="experience-details">
-            <p><b>Rogers Sports &amp; Media · Jan 2025</b></p>
-            <ul>
-              <li>Building a mature marketing plan with Target Audience, Value Proposition, Marketing Strategy and Competitive Advantage within the limited time.</li>
-              <li>Presenting to managers and judges from Rogers to market our proposal.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Volunteer Title -->
-      <div class="section-title">
-        <div class="intro">
-          <h1>
-            <span>V</span><span>o</span><span>l</span><span>u</span><span>n</span><span>t</span><span>e</span><span>e</span><span>r</span>
-          </h1>
-        </div>
-      </div>
-
-      <!-- Peer Leader -->
-      <div class="container">
-        <div class="experience-box blue-version">
-          <div class="experience-summary">
-            <p>Peer Leader</p>
-          </div>
-          <div class="experience-details">
-            <p><b>FMM High School · Jul 2020 - Dec 2022</b></p>
-            <ul>
-              <li>Collaborated with 10 other high school staff and students to prepare and design events for newcomers.</li>
-              <li>Helped students develop organizational, time management, and study skills.</li>
-              <li>Delivered supportive and knowledgeable counselling to students with academic or personal concerns.</li>
-              <li>Advocated for students to access available resources.</li>
-              <li>Provided resources to support students in achieving career goals.</li>
-              <li>Empowered students through counselling and skill-building exercises.</li>
-              <li>Advised students on educational, career and social opportunities.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Petsmart Charities -->
-        <div class="experience-box blue-version">
-          <div class="experience-summary">
-            <p>Petsmart<br>Charities</p>
-          </div>
-          <div class="experience-details">
-            <p><b>Adoption Centre · Jul 2022 - Aug 2023</b></p>
-            <ul>
-              <li>Provided leadership, guidance, and support to staff members.</li>
-              <li>Referred clients to appropriate team members, community agencies, and organizations to meet treatment needs.</li>
-              <li>Provide inquiry services for interested customers and promote the adoption of homeless pets.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
     </div>
+
+    <!-- Gallery Title -->
+    <div class="section-title">
+      <div class="intro">
+        <h1>
+          <span>G</span><span>a</span><span>l</span><span>l</span><span>e</span><span>r</span><span>y</span>
+        </h1>
+      </div>
+    </div>
+
+    
+    <div class="container">
+      <!-- Photography -->
+      <a href="https://soifa.github.io/photography/" style="text-decoration: none;">
+      <div class="art-box" style="background-image: url('1.Landscape-min.JPG');">
+        <div class="art-summary">
+          <p>Photography</p>
+        </div>
+      </div>
+      </a>
+      
+      <!-- Poster -->
+      <a href="https://soifa.github.io/poster/" style="text-decoration: none;">
+      <div class="art-box" style="background-image: url('Poster Deisign-01-min.png');">
+        <div class="art-summary">
+          <p>Poster</p>
+        </div>
+      </div>
+      </a>
+      
+      <!-- Figma -->
+      <a href="https://soifa.github.io/figma/" style="text-decoration: none;">
+      <div class="art-box" style="background-image: url('Xu_Sofia_W8.png');">
+        <div class="art-summary">
+          <p>Figma</p>
+        </div>
+      </div>
+      </a>
+      
+    </div>
+    
+    <div class="container">
+      <!-- Film Editing -->
+      <a href="https://soifa.github.io/film-editing/" style="text-decoration: none;">
+      <div class="art-box" style="background-image: url('echo of markham.png');">
+        <div class="art-summary">
+          <p>Film Editing</p>
+        </div>
+      </div>
+      </a>
+      
+      <!-- P5.js -->
+      <a href="https://soifa.github.io/p5.js/" style="text-decoration: none;">
+      <div class="art-box" style="background-image:url('image.png');">
+        <div class="art-summary">
+          <p>P5.js</p>
+        </div>
+      </div>
+      </a>
+      
+    </div>
+
+
+    <!-- Project Title -->
+    <div class="section-title">
+      <div class="intro">
+        <h1>
+          <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span>
+        </h1>
+      </div>
+    </div>
+    
+    <div class="container">
+      <!-- Product Rebranding -->
+      <a href="https://soifa.github.io/product-rebranding/" style="text-decoration: none;">
+      <div class="art-box" style="background-image: url('mockup-set copy.png');">
+        <div class="art-summary">
+          <p>Product Rebranding</p>
+        </div>
+      </div>
+      </a>
+      
+      <!-- Best Story Ever -->
+      <a href="https://soifa.github.io/best-story-ever/" style="text-decoration: none;">
+      <div class="art-box" style="background-image:url('Adobe Express - file.png');">
+        <div class="art-summary">
+          <p>Best Story Ever</p>
+        </div>
+      </div>
+      </a>
+      
+    </div>
+
+
+
   </body>
-
-
 </html>
